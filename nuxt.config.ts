@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   },
 
   css: [
-    './assets/paper.min.css',
+    './assets/paper.scss',
     './assets/style.scss',
   ],
 
