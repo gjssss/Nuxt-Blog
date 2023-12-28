@@ -11,4 +11,6 @@
   </div>
 </template>
 
-<style></style>
+<style src="../assets/paper.css"></style>
+
+<style src="../assets/front.scss"></style>

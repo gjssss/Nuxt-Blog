@@ -988,7 +988,7 @@ pre code {
 html {
     color: #41403e;
     color: var(--primary);
-    font-family: "Chinese Handwriting","Neucha", sans-serif;
+    font-family: "Chinese Handwriting", "Neucha", sans-serif;
     font-size: 20px;
 }
 
@@ -1015,7 +1015,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family:"Chinese Handwriting", "Patrick Hand SC", sans-serif;
+    font-family: "Chinese Handwriting", "Patrick Hand SC", sans-serif;
     font-weight: normal;
 }
 
@@ -2068,8 +2068,7 @@ button.btn-muted-outline:hover:active,
 .card {
     transition: all 235ms ease 0s;
     box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
-    border-color: #41403e;
-    border-color: var(--muted-light);
+    border-color: var(--primary);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-style: solid;
