@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
+    '@element-plus/nuxt',
   ],
 
   experimental: {
@@ -34,6 +35,9 @@ export default defineNuxtConfig({
       '/index': {
         redirect: '/',
       },
+      '/admin': {
+        redirect: '/admin/artical',
+      },
     },
   },
 
@@ -61,4 +65,9 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
+  elementPlus: {
+    importStyle: 'scss',
+    themes: ['dark'],
+  }
 })

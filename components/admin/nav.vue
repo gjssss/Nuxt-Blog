@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div>
-    <slot />
-  </div>
+    <div>
+        nav
+    </div>
 </template>
 
 <style>
