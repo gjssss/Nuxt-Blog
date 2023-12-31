@@ -22,7 +22,7 @@
     "pathe": "^1.1.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.6.1",
+    "@antfu/eslint-config": "2.4.4",
     "@iconify-json/carbon": "^1.1.27",
     "@iconify-json/twemoji": "^1.1.15",
     "@mdit/plugin-tasklist": "^0.8.0",
@@ -37,7 +37,7 @@
     "@vite-pwa/nuxt": "^0.4.0",
     "@vueuse/nuxt": "^10.7.1",
     "consola": "^3.2.3",
-    "eslint": "8.56.0",
+    "eslint": "npm:eslint-ts-patch@^8.55.0-1",
     "eslint-plugin-format": "^0.1.0",
     "eslint-ts-patch": "^8.55.0-1",
     "nuxt": "^3.9.0",

@@ -1,32 +1,32 @@
 <script setup lang="ts">
 definePageMeta({
-    layout: 'admin',
+  layout: 'admin',
 })
 </script>
 
 <template>
-    <AdminNav />
-    <main>
-        <NuxtPage :transition="{ name: 'slide-fade', mode: 'out-in' }" />
-    </main>
+  <AdminNav />
+  <main>
+    <NuxtPage :transition="{ name: 'slide-fade', mode: 'out-in' }" />
+  </main>
 </template>
 
 <style>
 .slide-fade-enter-active {
-    transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .slide-fade-leave-active {
-    transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .slide-fade-enter-from {
-    transform: translateX(-20px);
-    opacity: 0;
+  transform: translateX(-20px);
+  opacity: 0;
 }
 
 .slide-fade-leave-to {
-    transform: translateX(20px);
-    opacity: 0;
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

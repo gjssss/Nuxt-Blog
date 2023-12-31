@@ -3,10 +3,10 @@
 </script>
 
 <template>
-    <div>
-        artical
-        <ElButton>hello</ElButton>
-    </div>
+  <div>
+    artical
+    <ElButton>hello</ElButton>
+  </div>
 </template>
 
 <style>

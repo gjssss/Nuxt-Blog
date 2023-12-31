@@ -1,5 +1,3 @@
-import markdownit from 'markdown-it'
-
 const fm = useFileManager()
 
 export default defineEventHandler((event) => {

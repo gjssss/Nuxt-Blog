@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div>
-        nav
-    </div>
+  <div>
+    nav
+  </div>
 </template>
 
 <style>
