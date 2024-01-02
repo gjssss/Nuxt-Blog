@@ -1,5 +1,12 @@
 <script setup lang="ts">
-
+useHead({
+  link: [
+    {
+      rel: 'stylesheet',
+      href: '/styles/reset-tailwind.css',
+    },
+  ],
+})
 </script>
 
 <template>

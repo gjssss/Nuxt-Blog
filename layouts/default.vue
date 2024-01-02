@@ -1,5 +1,16 @@
 <script setup lang="ts">
-
+useHead({
+  link: [
+    {
+      rel: 'stylesheet',
+      href: '/styles/paper.min.css',
+    },
+    {
+      rel: 'stylesheet',
+      href: '/styles/front.css',
+    },
+  ],
+})
 </script>
 
 <template>
@@ -10,7 +21,3 @@
     </main>
   </div>
 </template>
-
-<style src="../assets/paper.css"></style>
-
-<style src="../assets/front.scss"></style>

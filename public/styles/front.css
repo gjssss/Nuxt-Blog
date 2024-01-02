@@ -1,0 +1,83 @@
+html.dark {
+    color-scheme: dark;
+}
+
+html {
+    background-color: var(--main-background);
+    color-scheme: light;
+}
+
+@media (max-width: 639.9px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+hr {
+    height: auto;
+}
+
+hr::after {
+    top: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+article p {
+    line-height: 1.4;
+}
+
+code,
+kbd {
+    padding: 0 4px;
+}
+
+a[target='_blank'] {
+    position: relative;
+    padding-right: 0.6em;
+}
+
+a[target='_blank']::after {
+    content: '';
+    position: absolute;
+    width: 0.6em;
+    height: 0.6em;
+    --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M26 28H6a2.003 2.003 0 0 1-2-2V6a2.003 2.003 0 0 1 2-2h10v2H6v20h20V16h2v10a2.003 2.003 0 0 1-2 2Z'/%3E%3Cpath fill='currentColor' d='M20 2v2h6.586L18 12.586L19.414 14L28 5.414V12h2V2H20z'/%3E%3C/svg%3E");
+    -webkit-mask: var(--un-icon) no-repeat;
+    mask: var(--un-icon) no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    background-color: currentColor;
+    color: inherit;
+}
+
+input,
+select,
+textarea {
+    display: inline;
+}
