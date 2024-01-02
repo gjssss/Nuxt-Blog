@@ -10,9 +10,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="ma box-border px-2 py-1 <sm:w-100% lg:w-800px sm:w80%">
     <slot />
   </div>
 </template>
-
-<style src="@unocss/reset/tailwind.css"></style>

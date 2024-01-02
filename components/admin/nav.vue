@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    nav
+    <NuxtLink to="/admin/artical">文章</NuxtLink>
   </div>
 </template>
 
