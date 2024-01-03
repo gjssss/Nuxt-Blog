@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
-    '@element-plus/nuxt',
+    'nuxt-primevue',
   ],
 
   experimental: {
@@ -14,9 +14,6 @@ export default defineNuxtConfig({
     renderJsonPayloads: true,
     typedPages: true,
   },
-
-  css: [
-  ],
 
   colorMode: {
     classSuffix: '',
@@ -66,8 +63,9 @@ export default defineNuxtConfig({
     },
   },
 
-  elementPlus: {
-    importStyle: 'scss',
-    themes: ['dark'],
+  primevue: {
+    components: {
+      prefix: 'pm',
+    },
   },
 })

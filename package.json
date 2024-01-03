@@ -14,12 +14,12 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@element-plus/nuxt": "^1.0.7",
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.0.0",
     "normalize-path": "^3.0.0",
-    "pathe": "^1.1.1"
+    "pathe": "^1.1.1",
+    "primevue": "^3.45.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.4.4",
@@ -41,6 +41,7 @@
     "eslint-plugin-format": "^0.1.0",
     "eslint-ts-patch": "^8.55.0-1",
     "nuxt": "^3.9.0",
+    "nuxt-primevue": "^0.2.2",
     "pinia": "^2.1.7",
     "sass": "^1.69.6",
     "typescript": "^5.3.3",

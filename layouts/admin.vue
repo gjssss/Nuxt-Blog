@@ -3,7 +3,17 @@ useHead({
   link: [
     {
       rel: 'stylesheet',
-      href: '/styles/reset-tailwind.css',
+      href: '/styles/admin.css',
+    },
+    {
+      id: 'theme-lignt-lara',
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/primevue@3.45.0/resources/themes/lara-light-green/theme.css',
+    },
+    {
+      id: 'theme-dark-lara',
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/primevue@3.45.0/resources/themes/lara-dark-green/theme.css',
     },
   ],
 })

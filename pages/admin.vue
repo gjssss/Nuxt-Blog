@@ -2,11 +2,20 @@
 definePageMeta({
   layout: 'admin',
 })
+const items = ref([
+  { label: 'File', icon: '/images/folder.png', link: '/admin/artical' },
+  { label: 'Post', icon: '/images/note.png', link: '/admin/post' },
+  { label: 'Setting', icon: '/images/setting.png', link: '/admin/setting' },
+])
 </script>
 
 <template>
-  <AdminNav />
-  <main>
+  <PmDock :model="items" position="bottom">
+    <template #icon="{ item }">
+      <img :src="item.icon" style="width: 100%" @click="navigateTo(item.link)">
+    </template>
+  </PmDock>
+  <main class="mt-10">
     <NuxtPage :transition="{ name: 'slide-fade', mode: 'out-in' }" />
   </main>
 </template>
