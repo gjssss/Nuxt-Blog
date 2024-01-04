@@ -16,28 +16,27 @@ class FileManager {
     this.Files = []
   }
 
-  async insertFile(path: string, stats?: Stats) {
-    const { absolutePath, name, isMD } = this.getInfo(path)
-    if (!isMD)
+  async insertFile(path: string, stats: Stats) {
+    const info = this.getInfo(path)
+    if (!info.isMD)
       return
-
-    const _fileObj = await this.getFileObj(absolutePath, name, stats)
+    const _fileObj = await this.getFileObj(stats, info)
     logFile(_fileObj.name, _fileObj.path, 'insert')
     this.Files.push(_fileObj)
   }
 
-  async updateFile(path: string, stats?: Stats) {
-    const { absolutePath, name, isMD } = this.getInfo(path)
-    if (!isMD)
+  async updateFile(path: string, stats: Stats) {
+    const info = this.getInfo(path)
+    if (!info.isMD)
       return
-    const idx = this.Files.findIndex(f => f.absolutePath === absolutePath)
+    const idx = this.Files.findIndex(f => f.absolutePath === info.absolutePath)
     if (idx >= 0) {
-      const _fileObj = await this.getFileObj(absolutePath, name, stats)
+      const _fileObj = await this.getFileObj(stats, info)
       logFile(_fileObj.name, _fileObj.path, 'update')
       this.Files.splice(idx, 1, _fileObj)
     }
     else {
-      logger.error(`not find update file [${name}]`)
+      logger.error(`not find update file [${info.name}]`)
     }
   }
 
@@ -59,7 +58,7 @@ class FileManager {
       return this.Files.find(f => f.path === path)
   }
 
-  private getInfo(path: string) {
+  private getInfo(path: string): FileInfo {
     const absolutePath = normalizePath(path)
     const fileName = absolutePath.split('/').pop()!
     const name = fileName.split('.').shift()!
@@ -72,14 +71,14 @@ class FileManager {
     }
   }
 
-  private async getFileObj(absolutePath: string, name: string, stats?: Stats) {
+  private async getFileObj(stats: Stats, info: FileInfo): Promise<FileStructer> {
     // load
-    const data = await fs.readFile(absolutePath, { encoding: 'utf-8' })
+    const data = await fs.readFile(info.absolutePath, { encoding: 'utf-8' })
     const result = matter(data, { excerpt: true })
 
     // resolve
-    const _path = result.data.path ?? relative(process.env.ROOT_DIR as string, absolutePath)
-    const _name = result.data.title ?? result.data.name ?? name
+    const _path = result.data.path ?? relative(process.env.ROOT_DIR as string, info.absolutePath)
+    const _name = result.data.title ?? result.data.name ?? info.name
     const content = md.render(result.content)
     const excerpt = md.render(result.excerpt ?? '')
 
@@ -87,7 +86,8 @@ class FileManager {
       ...result,
       name: _name,
       path: _path,
-      absolutePath,
+      absolutePath: info.absolutePath,
+      fileName: info.fileName,
       stats,
       content,
       excerpt,
@@ -99,7 +99,15 @@ interface FileStructer extends matter.GrayMatterFile<string> {
   name: string
   path: string
   absolutePath: string
-  stats?: Stats
+  fileName: string
+  stats: Stats
+}
+
+interface FileInfo {
+  absolutePath: string
+  fileName: string
+  name: string
+  isMD: boolean
 }
 
 let _instance: FileManager | undefined

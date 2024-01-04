@@ -11,8 +11,8 @@ export default defineNitroPlugin(() => {
 
     logger.info('Wait Loading Initial File')
     watch(resolve(rootPath))
-      .on('add', (path, stats) => fm.insertFile(path, stats))
-      .on('change', (path, stats) => fm.updateFile(path, stats))
+      .on('add', (path, stats) => fm.insertFile(path, stats!))
+      .on('change', (path, stats) => fm.updateFile(path, stats!))
       .on('unlink', path => fm.removeFile(path))
   }
   else {
