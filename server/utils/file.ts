@@ -95,7 +95,7 @@ class FileManager {
   }
 }
 
-interface FileStructer extends matter.GrayMatterFile<string> {
+export interface FileStructer extends matter.GrayMatterFile<string> {
   name: string
   path: string
   absolutePath: string
