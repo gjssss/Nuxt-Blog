@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { FileStructer } from '~/server/utils/file'
 
+const confirm = useConfirm()
+const { data } = useFetch('/api/admin/list')
+
+const visible = ref(false)
+const formData = ref<FileStructer>()
+
 function computeSize(size: number) {
   if (size < 1 << 10)
     return `${size}B`
@@ -12,17 +18,12 @@ function computeSize(size: number) {
     return `${(size / 1024 / 1024 / 2).toFixed(2)}MB`
 }
 
-const { data } = useFetch('/api/admin/list')
-
 const simpleData = computed(() => (data.value ?? []).map(file => ({
   createAt: (new Date(file.stats.birthtimeMs)).toLocaleDateString(),
   updateAt: (new Date(file.stats.ctimeMs)).toLocaleDateString(),
   name: file.name,
   size: computeSize(file.stats.size),
 })))
-
-const visible = ref(false)
-const formData = ref<FileStructer>()
 
 function generateFormData(obj: FileStructer) {
   formData.value = simpleDeepClone(obj)
@@ -45,12 +46,19 @@ function showSideBar(index: number) {
 }
 
 function deleteArticle(index: number) {
-
+  confirm.require({
+    message: 'Are you sure you want to delete?',
+    header: 'Confirm',
+    accept: () => {
+      console.log(index)
+    },
+  })
 }
 </script>
 
 <template>
   <div class="overflow-hidden <sm:rounded-0 sm:rounded-2">
+    <PmConfirmDialog />
     <PmSidebar v-model:visible="visible" header="Information" position="right" class="<sm:w-full lg:w-40rem sm:w-80%">
       <div class="h-full w-full flex flex-col of-hidden pt-5">
         <div class="no-scrollbar flex flex-1 flex-col gap-6 of-auto">
