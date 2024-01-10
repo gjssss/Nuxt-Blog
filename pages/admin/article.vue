@@ -43,6 +43,10 @@ function showSideBar(index: number) {
   generateFormData(data.value![index] as unknown as FileStructer)
   visible.value = true
 }
+
+function deleteArticle(index: number) {
+
+}
 </script>
 
 <template>
@@ -140,7 +144,16 @@ function showSideBar(index: number) {
       <PmColumn field="size" header="size" />
       <PmColumn header="opration">
         <template #body="{ index }">
-          <div class="i-carbon-view cursor-pointer" @click="showSideBar(index)" />
+          <div class="flex gap-1">
+            <div
+              class="i-carbon-view cursor-pointer hover:animate-tada hover:c-$text-color-secondary"
+              @click="showSideBar(index)"
+            />
+            <div
+              class="i-carbon-trash-can cursor-pointer hover:animate-tada hover:c-$text-color-secondary"
+              @click="deleteArticle(index)"
+            />
+          </div>
         </template>
       </PmColumn>
     </PmDataTable>

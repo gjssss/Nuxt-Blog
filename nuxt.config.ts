@@ -33,7 +33,7 @@ export default defineNuxtConfig({
         redirect: '/',
       },
       '/admin': {
-        redirect: '/admin/artical',
+        redirect: '/admin/article',
       },
     },
   },

@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'admin',
 })
 const items = ref([
-  { label: 'File', icon: '/images/folder.png', link: '/admin/artical' },
+  { label: 'File', icon: '/images/folder.png', link: '/admin/article' },
   { label: 'Post', icon: '/images/note.png', link: '/admin/post' },
   { label: 'Setting', icon: '/images/setting.png', link: '/admin/setting' },
 ])

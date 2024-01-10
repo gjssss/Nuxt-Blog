@@ -15,7 +15,7 @@ const { data } = await useFetch<info[]>('/api/catalogue')
       v-for="item in data"
       :key="item.path"
       :title="item.name"
-      :link="`/artical/${item.path}`"
+      :link="`/article/${item.path}`"
       :update-at="(new Date(item.updateAt)).toLocaleDateString()"
       :create-at="(new Date(item.createAt)).toLocaleDateString()"
     >

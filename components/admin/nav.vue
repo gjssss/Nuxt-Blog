@@ -4,7 +4,9 @@
 
 <template>
   <div>
-    <NuxtLink to="/admin/artical">文章</NuxtLink>
+    <NuxtLink to="/admin/article">
+      文章
+    </NuxtLink>
   </div>
 </template>
 

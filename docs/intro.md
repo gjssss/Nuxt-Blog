@@ -5,7 +5,7 @@ path: blog/introdue
 
 # introduces
 
-use fully server side render generate page, for a batter experience to read artical
+use fully server side render generate page, for a batter experience to read article
 
 functions
 

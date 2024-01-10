@@ -41,7 +41,7 @@
     "eslint": "npm:eslint-ts-patch@^8.55.0-1",
     "eslint-plugin-format": "^0.1.0",
     "eslint-ts-patch": "^8.55.0-1",
-    "nuxt": "^3.9.0",
+    "nuxt": "^3.9.1",
     "nuxt-primevue": "^0.2.2",
     "pinia": "^2.1.7",
     "sass": "^1.69.6",
