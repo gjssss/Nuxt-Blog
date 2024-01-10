@@ -18,8 +18,7 @@ const { data } = await useFetch<info[]>('/api/catalogue')
       :link="`/article/${item.path}`"
       :update-at="(new Date(item.updateAt)).toLocaleDateString()"
       :create-at="(new Date(item.createAt)).toLocaleDateString()"
-    >
-      <div v-if="item.excerpt" v-html="item.excerpt" />
-    </AritcleCard>
+      :excerpt="item.excerpt"
+    />
   </div>
 </template>
